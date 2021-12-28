@@ -1,0 +1,116 @@
+.hp-curtain {
+    background-color: rgba(0, 0, 0, 0.8);;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    transition: all 1.0s ease-in;
+    &.close {
+        height: 65vh;
+    }
+    &.clean {
+        background-color: transparent !important;
+        position: inherit;
+    }
+    .div-avatar {
+        width: 40vw;
+        height: 100vh;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        &.close {
+            justify-content: left;
+            align-items: baseline;
+            position: absolute;
+            width: 13vw;
+            top: 20vh;
+            height: 13vw;
+            right: 46vw;
+        }
+        .avatar {
+            position: absolute;
+            width: 20vw;
+            height: 20vw;
+            background-image: url('../../../assets/perfil.jfif');
+            background-size: contain;
+            border-radius: 50%;
+            transition: all 2s ease 0s;
+            &.in-header{
+                width: 13vw;
+                height: 13vw;
+                border: 1px solid white;
+            }
+        }
+    }
+    .div-person {
+        width: 60vw;
+        height: 100vh;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        text-align: center;
+        &.close {
+            display: none;
+        }
+        .person {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 50px;
+            &.hide {
+                display: none !important;
+            }
+            h1 {
+                font-size: 45px;
+                color: white;
+                margin: 0;
+                font-weight: 100;
+                margin-top: 15px;
+            }
+            h2 {
+                font-size: 60px;
+                color: rgb(51, 103, 214);
+                margin: 0;
+            }
+            .person-bottom {
+                margin-bottom: 25px;
+            }
+            div {
+                border: white 0.5px;
+                border-radius: 25px;
+                color: white;
+            }
+            .btn-met {
+                display: none;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                width: 300px;
+                border: 1px solid white;
+                cursor: pointer;
+                &.view{
+                    display: flex;
+                    animation: fade_in_show 0.5s
+                }
+                @keyframes fade_in_show {
+                    0% {
+                         opacity: 0;
+                         transform: scale(0)
+                    }
+               
+                    100% {
+                         opacity: 1;
+                         transform: scale(1)
+                    }
+                }
+            }
+        }
+    }
+    .div-navbar {
+        margin: 6.5% 10%;
+        width: 100vw;
+        display: none;
+    }
+}
