@@ -10,8 +10,7 @@
             <div (click)="meetMe()" class="btn-met">Con&oacute;ceme <span class="material-icons md-24">navigate_next</span></div>
         </div>
     </div>
-    <div class="div-navbar">
-        <app-card-item [img]="'xd'" [title]="'ga'" [img]="'/'"></app-card-item>
-        <app-card-item [img]="'xd'" [title]="'ga'" [img]="'/'"></app-card-item>
+    <div class="div-navbar" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
     </div>
 </div>

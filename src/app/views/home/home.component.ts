@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { slider } from 'src/app/shared/animations/slider';
 import { HeaderListenerEnum } from 'src/app/shared/constants/enums/header-listener.enum';
 import { EmitEvent, EventBusService, Events } from 'src/app/shared/service/event.bus.service';
 
@@ -6,7 +8,8 @@ import { EmitEvent, EventBusService, Events } from 'src/app/shared/service/event
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations: [slider]
 })
 export class HomeComponent implements OnInit {
 
@@ -14,6 +17,10 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('curtain')
   curtain!: ElementRef;
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
 
   ngOnInit(): void {
     const event: EmitEvent = {
@@ -38,5 +45,6 @@ export class HomeComponent implements OnInit {
     document.getElementsByClassName('div-avatar')[0].classList.add('close');
     document.getElementsByClassName('person')[0].classList.add('hide');
     document.getElementsByClassName('div-person')[0].classList.add('close');
+    document.getElementsByClassName('div-navbar')[0].classList.add('open');
   }
 }

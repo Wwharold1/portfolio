@@ -8,7 +8,9 @@
     background-image: url('https://mocah.org/uploads/posts/376596-4k-wallpaper.jpg');
     &.img {
         background-position: center;
-        background-image: url(https://img3.goodfon.com/wallpaper/nbig/1/41/minimalizm-monitor-kompyuter.jpg) !important;
+        background-image: url('../../../assets/code2.jpg') !important;
+        background-repeat: no-repeat;
+        background-size: 100%;
     }
     .options {
         width: 50vw;
@@ -40,4 +42,5 @@
 
 body {
     overflow-y: hidden;
+    overflow-x: hidden;
 }

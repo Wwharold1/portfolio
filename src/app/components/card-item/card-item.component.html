@@ -1,4 +1,8 @@
-<div class="card-item">
-    <img [src]="img">
-    <div (click)="redirectTo()" >{{title}}</div>
+<div class="card-item" (click)="redirectTo()">
+    <div class="img" [ngStyle]="{'background-image': 'url(' + img + ')'}">
+        <span class="material-icons md-24">
+            {{icon}}
+        </span>
+    </div>
+    <div class="text">{{title}}</div>
 </div>

@@ -10,7 +10,7 @@
         height: 65vh;
     }
     &.clean {
-        background-color: transparent !important;
+        background-color: rgba(0,0,0,0.1) !important;
         position: inherit;
     }
     .div-avatar {
@@ -109,8 +109,13 @@
         }
     }
     .div-navbar {
-        margin: 6.5% 10%;
         width: 100vw;
         display: none;
+        &.open {
+            display: flex;
+            justify-content: space-evenly;
+            height: 100%;
+            align-items: center;
+        }
     }
 }

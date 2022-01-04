@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-item',
   templateUrl: './card-item.component.html',
-  styleUrls: ['./card-item.component.scss']
+  styleUrls: ['./card-item.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CardItemComponent implements OnInit {
 
@@ -13,6 +14,7 @@ export class CardItemComponent implements OnInit {
   @Input() img: string = '';
   @Input() title: string = '';
   @Input() route: string = '';
+  @Input() icon: string = '';
 
   ngOnInit(): void {
   }
